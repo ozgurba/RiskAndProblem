@@ -1,0 +1,39 @@
+entity RiskAndProblem {
+	id Long,
+    relatedPlan Plan,
+    relatedLevel Level,
+    description String,
+    detail String,
+    solution String,
+    openingDate Date,
+    closingDate Date,
+    type EnumRiskAndProblemType,
+    state EnumRiskAndProblemState,
+    unit String,
+}
+
+entity Plan{
+id Long,
+level Level,
+}
+
+
+
+
+enum EnumRiskAndProblemType{
+	RISK,
+  	PROBLEM
+}
+enum EnumRiskAndProblemState{
+	OPEN,
+  	CLOSED
+}
+
+entity Level{
+id Long,
+label String
+}
+
+// Set service options to all except few
+service all with serviceImpl
+
